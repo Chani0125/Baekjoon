@@ -17,9 +17,7 @@ def dfs(v, d):
 
 n, m = map(int, sys.stdin.readline().split())
 r = [tuple(map(int, sys.stdin.readline().split())) for _ in range(m)]
-g = dict()
-for i in range(n):
-    g[i] = set()
+g = [set() for _ in range(n)]
 for x, y in r:
     g[x].add(y)
     g[y].add(x)
