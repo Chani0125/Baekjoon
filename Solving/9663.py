@@ -17,7 +17,6 @@ def NQueen(b, n, depth):
                     b[j][i+j-depth] = False
                 if i-j+depth >= 0:
                     b[j][i-j+depth] = False
-    print(cnt)
     return cnt
 
 
