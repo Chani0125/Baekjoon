@@ -1,5 +1,3 @@
-print(-7 % 8)
-
 p = [list(map(int, input().split())) for _ in range(3)]
 d = [(p[i+1][0] - p[i][0], p[i+1][1] - p[i][1]) for i in range(2)]
 a = []
