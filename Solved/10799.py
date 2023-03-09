@@ -14,4 +14,6 @@ for i in range(0, len(iron_pipe)-1):
         else:
             current_pipe -= 1
             total_pipe += 1
-print(total_pipe + 1)
+if current_pipe != 0:
+    total_pipe += 1
+print(total_pipe)
