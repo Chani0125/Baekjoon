@@ -56,6 +56,7 @@ def merge_sort_index(arr):
     return arr
 
 
-lst = [19, 1, 17, 3, 20, 15, 5, 13, 7, 11, 9, 18, 2, 16, 4, 14, 6, 0, 12, 8, 10]
-print(merge_sort_slice(lst))
-print(merge_sort_index(lst))
+if __name__ == "__main__":
+    lst = [19, 1, 17, 3, 20, 15, 5, 13, 7, 11, 9, 18, 2, 16, 4, 14, 6, 0, 12, 8, 10]
+    print(merge_sort_slice(lst))
+    print(merge_sort_index(lst))
