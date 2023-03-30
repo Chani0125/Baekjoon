@@ -16,11 +16,12 @@ for i in range(n):
 for k in range(n):
     for i in range(n):
         for j in range(n):
-            if graph[i][j] > graph[i][k] + graph[k][j]:
+            if graph[i][k] == 0 and graph[k][j] == 0:
                 graph[i][j] = graph[i][k] + graph[k][j]
 
 for i in range(n):
     ans = 0
     for j in range(n):
-        ans += graph[i][j] * graph[j][i]
+        if graph[i][j] == 1 and graph[j][i] == 1:
+            ans += 1
     print(ans)
