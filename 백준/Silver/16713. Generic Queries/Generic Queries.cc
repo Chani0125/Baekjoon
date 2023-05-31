@@ -4,30 +4,29 @@ using namespace std;
 
 int main(void)
 {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
     int n, q;
     cin >> n >> q;
 
-    vector<int> num(n);
-    for (int i = 0; i < n; i++) scanf("%d", num.begin()+i);
-    
-    vector<int> cnt(n+1, 0);
+    vector<int> prefix_xor(n+1, 0);
 
-    int s, e;
-    for (int i = 0; i < q; i++)
-    {
-        scanf("%d %d", &s, &e);
-        cnt[s-1]++; cnt[e]--;
-    }
-
-    int ans = 0, now_cnt = 0;
+    int num;
     for (int i = 0; i < n; i++)
     {
-        now_cnt += cnt[i];
-        if (now_cnt % 2 != 0)
-            ans ^= num[i];
+        cin >> num;
+        prefix_xor[i+1] = prefix_xor[i] ^ num;
+    } 
+
+    int s, e, ans = 0;
+    for (int i = 0; i < q; i++)
+    {
+        cin >> s >> e;  
+        ans ^= prefix_xor[e] ^ prefix_xor[s-1];
     }
 
-    printf("%d\n", ans);
+    cout << ans << "\n";
 
     return 0;
 }   
