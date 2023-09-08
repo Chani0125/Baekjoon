@@ -12,25 +12,27 @@ int main(void)
     
     int n; cin >> n;
 
+    int k;
     vector<int> s(n, 0);
     vector<vector<int>> t(n, vector<int>(n));
+    priority_queue<pair<int, int>, vector<pair<int, int>>, less<pair<int, int>>> pq;
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             cin >> t[i][j];
-    
-    int max_idx = 0;
+
     for (int i = 0; i < n; i++)
+        pq.emplace(t[n-1][i], i);
+    
+    pair<int, int> num_max;
+    for (int i = 0; i < n-1; i++)
     {
-        max_idx = 0;
-        for (int j = 1; j < n; j++)
-            if (t[n-1-s[j]][j] > t[n-1-s[max_idx]][max_idx])
-                max_idx = j;
-        s[max_idx]++;
+        num_max = pq.top(); pq.pop();
+        s[num_max.Y]++;
+        pq.emplace(t[n-1-s[num_max.Y]][num_max.Y], num_max.Y);
     }
 
-    s[max_idx]--;
-    cout << t[n-1-s[max_idx]][max_idx];
+    cout << pq.top().X;
     
     return 0;
 }
