@@ -46,7 +46,8 @@
         "forward_list": "cpp",
         "string_view": "cpp",
         "chrono": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "complex": "cpp"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
@@ -54,5 +55,6 @@
     "python.formatting.provider": "none",
     "cSpell.words": [
         "apts"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "enabled"
 }
