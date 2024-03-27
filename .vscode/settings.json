@@ -57,5 +57,6 @@
     "python.formatting.provider": "none",
     "cSpell.words": [
         "apts"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }
