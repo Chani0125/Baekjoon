@@ -14,16 +14,17 @@ def lcm(a, b):
 
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
-b = a
-# b = []
+b = set()
 
-# for i in range(k):
-#     for j in range(k):
-#         if i != j and a[i] % a[j] == 0:
-#             break
-#     else:
-#         b.append(a[i])
-# b.sort()
+for i, j in combinations(a, 2):
+    if i % j == 0:
+        b.add(j)
+    elif j % i == 0:
+        b.add(i)
+    else:
+        b.add(i)
+        b.add(j)
+b = list(b)
 
 if b[0] == 1:
     print(0)
