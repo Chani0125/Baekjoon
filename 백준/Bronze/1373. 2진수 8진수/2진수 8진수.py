@@ -1,0 +1,1 @@
+print(oct(int('0b' + input().strip(), 2))[2:])
