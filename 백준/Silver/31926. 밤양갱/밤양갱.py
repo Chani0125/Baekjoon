@@ -1,0 +1,1 @@
+print(9+len([*map(int,[*bin(int(input()))[2:]])]))
